@@ -90,7 +90,7 @@
             left: 50%;
             transform: translateX(-50%);
             z-index: 1000;
-            background: rgba(120, 198, 198, 0.15);
+            background: rgba(120, 198, 198, 0.15) !important;
             border: 1px solid rgba(120, 198, 198, 0.2);
             border-radius: 50px;
             padding: 10px 30px;
@@ -141,10 +141,12 @@
             font-weight: 700;
             margin-bottom: 20px;
             background: linear-gradient(45deg, #b7e4c7, #a7c7e7, #ffe5b4);
-            color: transparent;
+            color: #3a3a3a; /* fallback color for visibility */
             -webkit-background-clip: text;
             background-clip: text;
             animation: glow 2s ease-in-out infinite alternate;
+            text-shadow: 0 2px 8px rgba(120,198,198,0.25), 0 0px 0px #fff; /* subtle shadow for contrast */
+            /* Remove -webkit-text-fill-color: transparent for better visibility */
         }
 
         @keyframes glow {
@@ -908,15 +910,20 @@
             link.setAttribute('rel', 'noopener noreferrer');
         });
 
-        // Add scroll effect to navigation
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 100) {
-                nav.style.background = 'rgba(0, 0, 0, 0.8)';
-            } else {
-                nav.style.background = 'rgba(255, 255, 255, 0.1)';
-            }
-        });
+        // Remove nav background change on scroll
+        // window.addEventListener('scroll', () => {
+        //     const nav = document.querySelector('nav');
+        //     if (window.scrollY > 100) {
+        //         nav.style.background = 'rgba(0, 0, 0, 0.8)';
+        //     } else {
+        //         nav.style.background = 'rgba(255, 255, 255, 0.1)';
+        //     }
+        // });
+
+        // Instead, always keep pastel nav background
+        document.querySelector('nav').style.background = 'rgba(120, 198, 198, 0.15)';
+        document.querySelector('nav').style.border = '1px solid rgba(120, 198, 198, 0.2)';
+        // ...existing code...
 
         // Intersection Observer for animations
         const observerOptions = {

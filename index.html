@@ -13,22 +13,22 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: #0a0a0a;
-            color: #fff;
+            background: #eaf6fb; /* pastel blue */
+            color: #3a3a3a; /* dark pastel gray */
             overflow-x: hidden;
         }
 
-        /* Animated background */
+        /* Animated pastel background */
         .bg-animation {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%);
-            animation: float 20s ease-in-out infinite;
+            background: radial-gradient(circle at 20% 80%, rgba(120, 198, 198, 0.25) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(119, 198, 255, 0.25) 0%, transparent 50%);
             z-index: -1;
+            will-change: transform;
         }
 
         @keyframes float {
@@ -49,39 +49,38 @@
         .social-link {
             width: 50px;
             height: 50px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.5);
+            color: #3a3a3a;
+            border: 1px solid rgba(120, 198, 198, 0.2);
             backdrop-filter: blur(10px);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #fff;
             text-decoration: none;
             font-size: 20px;
             transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .social-link:hover {
-            background: rgba(255, 255, 255, 0.2);
             transform: translateY(-3px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
         }
 
         .social-link.github:hover {
-            background: linear-gradient(45deg, #333, #555);
+            background: linear-gradient(45deg, #b2c2d6, #d6e2e9);
         }
 
         .social-link.linkedin:hover {
-            background: linear-gradient(45deg, #0077b5, #0099d4);
+            background: linear-gradient(45deg, #a7c7e7, #b7e4c7);
         }
 
         .social-link.twitter:hover {
-            background: linear-gradient(45deg, #1da1f2, #0d8bd9);
+            background: linear-gradient(45deg, #b7e4c7, #a7c7e7);
         }
 
         .social-link.email:hover {
-            background: linear-gradient(45deg, #ff6b6b, #ff5252);
+            background: linear-gradient(45deg, #ffe5b4, #b7e4c7);
         }
 
         /* Navigation */
@@ -91,11 +90,10 @@
             left: 50%;
             transform: translateX(-50%);
             z-index: 1000;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
+            background: rgba(120, 198, 198, 0.15);
+            border: 1px solid rgba(120, 198, 198, 0.2);
             border-radius: 50px;
             padding: 10px 30px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         nav ul {
@@ -105,7 +103,7 @@
         }
 
         nav a {
-            color: #fff;
+            color: #3a3a3a;
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s ease;
@@ -119,7 +117,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            background: linear-gradient(45deg, #b7e4c7, #a7c7e7);
             transition: width 0.3s ease;
         }
 
@@ -135,15 +133,16 @@
             justify-content: center;
             text-align: center;
             position: relative;
+            background: linear-gradient(120deg, #eaf6fb 60%, #b7e4c7 100%);
         }
 
         .hero-content h1 {
             font-size: 4rem;
             font-weight: 700;
             margin-bottom: 20px;
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1);
+            background: linear-gradient(45deg, #b7e4c7, #a7c7e7, #ffe5b4);
+            color: transparent;
             -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
             background-clip: text;
             animation: glow 2s ease-in-out infinite alternate;
         }
@@ -158,6 +157,7 @@
             margin-bottom: 30px;
             opacity: 0.8;
             min-height: 1.5em;
+            color: #3a3a3a;
             /* For typing effect caret alignment */
         }
         .typing {
@@ -179,28 +179,28 @@
         .cta-button {
             display: inline-block;
             padding: 15px 40px;
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
-            color: white;
+            background: linear-gradient(45deg, #b7e4c7, #a7c7e7);
+            color: #3a3a3a;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 600;
             transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+            box-shadow: 0 10px 30px rgba(120, 198, 198, 0.2);
         }
 
         .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(255, 107, 107, 0.4);
+            box-shadow: 0 15px 40px rgba(120, 198, 198, 0.3);
         }
 
-        /* Floating elements */
+        /* Floating elements (parallax targets) */
         .floating-element {
             position: absolute;
             width: 60px;
             height: 60px;
             border-radius: 50%;
-            background: linear-gradient(45deg, rgba(255, 107, 107, 0.2), rgba(78, 205, 196, 0.2));
+            background: linear-gradient(45deg, rgba(120, 198, 198, 0.2), rgba(183, 228, 199, 0.2));
             animation: float-element 6s ease-in-out infinite;
+            will-change: transform;
         }
 
         .floating-element:nth-child(1) {
@@ -230,22 +230,21 @@
         .about {
             padding: 100px 50px;
             text-align: center;
-            background: rgba(15, 15, 15, 0.8);
+            background: rgba(183, 228, 199, 0.3);
             backdrop-filter: blur(20px);
         }
 
         .about h2 {
             font-size: 2.5rem;
             margin-bottom: 30px;
-            color: #4ecdc4;
+            color: #a7c7e7;
         }
 
         .about p {
             font-size: 1.1rem;
-            max-width: 800px;
-            margin: 0 auto;
-            line-height: 1.8;
+            margin-bottom: 30px;
             opacity: 0.9;
+            color: #3a3a3a;
         }
 
         .skills {
@@ -257,23 +256,24 @@
         }
 
         .skill-tag {
-            background: linear-gradient(45deg, rgba(255, 107, 107, 0.2), rgba(78, 205, 196, 0.2));
+            background: linear-gradient(45deg, rgba(183, 228, 199, 0.3), rgba(120, 198, 198, 0.2));
             padding: 10px 20px;
             border-radius: 25px;
-            border: 1px solid rgba(78, 205, 196, 0.3);
+            border: 1px solid rgba(120, 198, 198, 0.2);
+            color: #3a3a3a;
             font-weight: 500;
             transition: all 0.3s ease;
         }
 
         .skill-tag:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(78, 205, 196, 0.2);
+            box-shadow: 0 10px 20px rgba(120, 198, 198, 0.2);
         }
 
         /* Experience Section */
         .experience {
             padding: 100px 50px;
-            background: rgba(5, 5, 5, 0.8);
+            background: rgba(120, 198, 198, 0.15);
             backdrop-filter: blur(20px);
         }
 
@@ -281,7 +281,7 @@
             font-size: 2.5rem;
             margin-bottom: 50px;
             text-align: center;
-            color: #45b7d1;
+            color: #a7c7e7;
         }
 
         .experience-timeline {
@@ -320,7 +320,7 @@
             text-align: right;
             padding-right: 30px;
             font-weight: 600;
-            color: #4ecdc4;
+            color: #a7c7e7;
             font-size: 1.1rem;
             flex-shrink: 0; /* Prevent shrinking */
         }
@@ -334,13 +334,13 @@
         .experience-content {
             flex-grow: 1; /* Allow content to take up available space */
             padding: 20px;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid #b7e4c7;
             border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
             text-align: left; /* Ensure text aligns left within the content box */
             max-width: 75%; /* Set a max-width to control overall width */
+            color: #3a3a3a;
         }
 
         .experience-content:hover {
@@ -351,13 +351,13 @@
         .experience-content h3 {
             font-size: 1.3rem;
             margin-bottom: 5px;
-            color: #fff;
+            color: #3a3a3a;
         }
 
         .experience-content h4 {
             font-size: 1.1rem;
             margin-bottom: 15px;
-            color: #ff6b6b;
+            color: #b7e4c7;
             font-weight: 500;
         }
 
@@ -374,23 +374,25 @@
         }
 
         .experience-tech span {
-            background: linear-gradient(45deg, rgba(255, 107, 107, 0.2), rgba(78, 205, 196, 0.2));
+            background: linear-gradient(45deg, rgba(183, 228, 199, 0.3), rgba(120, 198, 198, 0.2));
             padding: 4px 12px;
             border-radius: 15px;
             font-size: 0.9rem;
-            border: 1px solid rgba(78, 205, 196, 0.3);
+            border: 1px solid rgba(120, 198, 198, 0.2);
+            color: #3a3a3a;
         }
 
         /* Projects Section */
         .projects {
             padding: 100px 50px;
             text-align: center;
+            background: rgba(183, 228, 199, 0.2);
         }
 
         .projects h2 {
             font-size: 2.5rem;
             margin-bottom: 50px;
-            color: #ff6b6b;
+            color: #a7c7e7;
         }
 
         .projects-grid {
@@ -402,14 +404,14 @@
         }
 
         .project-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid #b7e4c7;
             border-radius: 20px;
             padding: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            color: #3a3a3a;
         }
 
         .project-card::before {
@@ -436,7 +438,7 @@
             width: 60px;
             height: 60px;
             margin: 0 auto 20px;
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            background: linear-gradient(45deg, #b7e4c7, #a7c7e7);
             border-radius: 15px;
             display: flex;
             align-items: center;
@@ -447,7 +449,7 @@
         .project-card h3 {
             font-size: 1.5rem;
             margin-bottom: 15px;
-            color: #4ecdc4;
+            color: #a7c7e7;
         }
 
         .project-card p {
@@ -460,30 +462,30 @@
             display: inline-block;
             padding: 10px 25px;
             background: transparent;
-            color: #ff6b6b;
+            color: #a7c7e7;
             text-decoration: none;
-            border: 2px solid #ff6b6b;
+            border: 2px solid #a7c7e7;
             border-radius: 25px;
             transition: all 0.3s ease;
         }
 
         .project-link:hover {
-            background: #ff6b6b;
-            color: white;
+            background: #a7c7e7;
+            color: #fff;
         }
 
         /* Certifications Section */
         .certifications {
             padding: 100px 50px;
             text-align: center;
-            background: rgba(15, 15, 15, 0.8);
+            background: rgba(120, 198, 198, 0.15);
             backdrop-filter: blur(20px);
         }
 
         .certifications h2 {
             font-size: 2.5rem;
             margin-bottom: 40px;
-            color: #4ecdc4;
+            color: #a7c7e7;
         }
 
         .certifications ul {
@@ -495,19 +497,20 @@
 
         .certifications li {
             margin-bottom: 28px;
+            color: #3a3a3a;
         }
 
         /* Contact Section */
         .contact {
             padding: 100px 50px;
             text-align: center;
-            background: rgba(10, 10, 10, 0.9);
+            background: rgba(183, 228, 199, 0.2);
         }
 
         .contact h2 {
             font-size: 2.5rem;
             margin-bottom: 30px;
-            color: #45b7d1;
+            color: #a7c7e7;
         }
 
         .contact-links {
@@ -521,14 +524,14 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            color: #fff;
+            color: #3a3a3a;
             text-decoration: none;
             font-size: 1.1rem;
             transition: all 0.3s ease;
         }
 
         .contact-link:hover {
-            color: #4ecdc4;
+            color: #a7c7e7;
             transform: translateY(-3px);
         }
 
@@ -539,8 +542,8 @@
             bottom: 30px;
             width: 56px;
             height: 56px;
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
-            color: #fff;
+            background: linear-gradient(45deg, #b7e4c7, #a7c7e7);
+            color: #3a3a3a;
             border: none;
             border-radius: 50%;
             box-shadow: 0 8px 24px rgba(0,0,0,0.25);
@@ -964,6 +967,22 @@
         backToTopBtn.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
+
+        // Parallax effect for floating elements and background
+        function parallaxScroll() {
+            const scrollY = window.scrollY;
+            document.querySelectorAll('.floating-element').forEach((el, i) => {
+                // Each element moves at a different speed
+                const speed = 0.2 + i * 0.1;
+                el.style.transform = `translateY(${scrollY * speed}px) scale(1.1)`;
+            });
+            // Parallax for background
+            const bg = document.querySelector('.bg-animation');
+            if (bg) {
+                bg.style.transform = `translateY(${scrollY * 0.08}px) scale(1.02)`;
+            }
+        }
+        window.addEventListener('scroll', parallaxScroll);
     </script>
 </body>
 </html>

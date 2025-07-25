@@ -14,8 +14,11 @@
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background: #eaf6fb; /* pastel blue */
-            color: #3a3a3a; /* dark pastel gray */
+            color: #232323; /* slightly darker for better contrast */
             overflow-x: hidden;
+            font-size: 1.08rem;
+            line-height: 1.7; /* improved line height */
+            font-weight: 400;
         }
 
         /* Animated pastel background */
@@ -104,10 +107,10 @@
         }
 
         nav a {
-            color: #3a3a3a;
+            color: #232323;
             text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
+            font-weight: 600; /* bolder for nav links */
+            letter-spacing: 0.02em;
             position: relative;
         }
 
@@ -139,7 +142,7 @@
 
         .hero-content h1 {
             font-size: 4rem;
-            font-weight: 700;
+            font-weight: 800; /* bolder for heading */
             margin-bottom: 20px;
             background: linear-gradient(45deg, #b7e4c7, #a7c7e7, #ffe5b4);
             color: #3a3a3a; /* fallback color for visibility */
@@ -147,7 +150,7 @@
             background-clip: text;
             animation: glow 2s ease-in-out infinite alternate;
             text-shadow: 0 2px 8px rgba(120,198,198,0.25), 0 0px 0px #fff; /* subtle shadow for contrast */
-            /* Remove -webkit-text-fill-color: transparent for better visibility */
+            letter-spacing: 0.01em;
         }
 
         @keyframes glow {
@@ -156,12 +159,13 @@
         }
 
         .hero-content p {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             margin-bottom: 30px;
-            opacity: 0.8;
+            opacity: 0.92;
             min-height: 1.5em;
-            color: #3a3a3a;
-            /* For typing effect caret alignment */
+            color: #232323;
+            font-weight: 500;
+            line-height: 1.7;
         }
         .typing {
             white-space: nowrap;
@@ -240,14 +244,18 @@
         .about h2 {
             font-size: 2.5rem;
             margin-bottom: 30px;
-            color: #a7c7e7;
+            font-weight: 800;
+            letter-spacing: 0.01em;
+            color: #4ecdc4;
         }
 
         .about p {
-            font-size: 1.1rem;
+            font-size: 1.13rem;
             margin-bottom: 30px;
-            opacity: 0.9;
-            color: #3a3a3a;
+            line-height: 1.75;
+            color: #232323;
+            font-weight: 500;
+            letter-spacing: 0.01em;
         }
 
         .skills {
@@ -264,7 +272,8 @@
             border-radius: 25px;
             border: 1px solid rgba(120, 198, 198, 0.2);
             color: #3a3a3a;
-            font-weight: 500;
+            font-weight: 600;
+            letter-spacing: 0.01em;
             transition: all 0.3s ease;
         }
 
@@ -284,7 +293,9 @@
             font-size: 2.5rem;
             margin-bottom: 50px;
             text-align: center;
-            color: #a7c7e7;
+            font-weight: 800;
+            letter-spacing: 0.01em;
+            color: #4ecdc4;
         }
 
         .experience-timeline {
@@ -322,9 +333,9 @@
             min-width: 150px; /* Give a fixed min-width for date to align content */
             text-align: right;
             padding-right: 30px;
-            font-weight: 600;
-            color: #a7c7e7;
-            font-size: 1.1rem;
+            font-weight: 700;
+            color: #4ecdc4;
+            font-size: 1.13rem;
             flex-shrink: 0; /* Prevent shrinking */
         }
 
@@ -352,22 +363,25 @@
         }
 
         .experience-content h3 {
-            font-size: 1.3rem;
-            margin-bottom: 5px;
-            color: #3a3a3a;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #232323;
         }
 
         .experience-content h4 {
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-            color: #b7e4c7;
-            font-weight: 500;
+            font-size: 1.08rem;
+            font-weight: 600;
+            color: #4ecdc4;
         }
 
         .experience-content p {
-            line-height: 1.6;
+            line-height: 1.75;
             margin-bottom: 15px;
             opacity: 0.9;
+            font-size: 1.13rem;
+            color: #232323;
+            font-weight: 500;
+            letter-spacing: 0.01em;
         }
 
         .experience-tech {
@@ -383,6 +397,8 @@
             font-size: 0.9rem;
             border: 1px solid rgba(120, 198, 198, 0.2);
             color: #3a3a3a;
+            font-weight: 600;
+            letter-spacing: 0.01em;
         }
 
         /* Projects Section */
@@ -395,7 +411,9 @@
         .projects h2 {
             font-size: 2.5rem;
             margin-bottom: 50px;
-            color: #a7c7e7;
+            font-weight: 800;
+            letter-spacing: 0.01em;
+            color: #4ecdc4;
         }
 
         .projects-grid {
@@ -450,30 +468,37 @@
         }
 
         .project-card h3 {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #4ecdc4;
             margin-bottom: 15px;
-            color: #a7c7e7;
         }
 
         .project-card p {
             opacity: 0.8;
             line-height: 1.6;
             margin-bottom: 20px;
+            font-size: 1.13rem;
+            color: #232323;
+            font-weight: 500;
+            letter-spacing: 0.01em;
         }
 
         .project-link {
             display: inline-block;
             padding: 10px 25px;
             background: transparent;
-            color: #a7c7e7;
+            color: #4ecdc4;
             text-decoration: none;
-            border: 2px solid #a7c7e7;
+            border: 2px solid #4ecdc4;
             border-radius: 25px;
             transition: all 0.3s ease;
+            font-weight: 600;
+            letter-spacing: 0.01em;
         }
 
         .project-link:hover {
-            background: #a7c7e7;
+            background: #4ecdc4;
             color: #fff;
         }
 
@@ -494,7 +519,9 @@
         .certifications h2 {
             font-size: 2.5rem;
             margin-bottom: 40px;
-            color: #a7c7e7;
+            font-weight: 800;
+            letter-spacing: 0.01em;
+            color: #4ecdc4;
             font-family: 'Montserrat', 'Inter', 'Segoe UI', Arial, sans-serif;
         }
 
@@ -508,6 +535,8 @@
         .certifications li {
             margin-bottom: 28px;
             color: #3a3a3a;
+            font-weight: 500;
+            letter-spacing: 0.01em;
         }
 
         /* Contact Section */
@@ -520,7 +549,9 @@
         .contact h2 {
             font-size: 2.5rem;
             margin-bottom: 30px;
-            color: #a7c7e7;
+            font-weight: 800;
+            letter-spacing: 0.01em;
+            color: #4ecdc4;
         }
 
         .contact-links {
@@ -536,7 +567,9 @@
             gap: 10px;
             color: #3a3a3a;
             text-decoration: none;
-            font-size: 1.1rem;
+            font-size: 1.13rem;
+            font-weight: 600;
+            letter-spacing: 0.01em;
             transition: all 0.3s ease;
         }
 
@@ -578,6 +611,21 @@
                 width: 44px;
                 height: 44px;
                 font-size: 1.4rem;
+            }
+
+            body {
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+            .about p,
+            .experience-content p,
+            .project-card p,
+            .certifications li,
+            .contact p {
+                font-size: 1rem;
+            }
+            .contact-link {
+                font-size: 1rem;
             }
 
             /* Responsive adjustments for experience section */
